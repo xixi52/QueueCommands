@@ -22,7 +22,7 @@ public class CmdQc implements CommandExecutor {
 		if (cmd.getName().equals("qc") && args.length > 0) {
 			if (args[0].equals("addp")) {
 				if ((!sender.hasPermission("queuecommands.addp")) && ((sender instanceof Player))) {
-					sender.sendMessage(ChatColor.RED + "[QueueCommands] : You do not have permission to do this!");
+					sender.sendMessage(ChatColor.RED + "You don't have permission to access this command.");
 					return false;
 				}
 				if (args.length < 3) {
@@ -77,7 +77,7 @@ public class CmdQc implements CommandExecutor {
 			}
 			if (args[0].equals("clear")) {
 				if ((!sender.hasPermission("queuecommands.clear")) && ((sender instanceof Player))) {
-					sender.sendMessage(ChatColor.RED + "[QueueCommands] : You do not have permission to do this!");
+					sender.sendMessage(ChatColor.RED + "You don't have permission to access this command.");
 					return false;
 				}
 				if (args.length != 2) {
@@ -90,7 +90,7 @@ public class CmdQc implements CommandExecutor {
 			}
 			if (args[0].equals("message")) {
 				if ((!sender.hasPermission("queuecommands.message")) && ((sender instanceof Player))) {
-					sender.sendMessage(ChatColor.RED + "[QueueCommands] : You do not have permission to do this!");
+					sender.sendMessage(ChatColor.RED + "You don't have permission to access this command.");
 					return false;
 				}
 				if (args.length < 3) {
@@ -149,7 +149,7 @@ public class CmdQc implements CommandExecutor {
 			}
 			if (args[0].equals("addc")) {
 				if ((!sender.hasPermission("queuecommands.addc")) && ((sender instanceof Player))) {
-					sender.sendMessage(ChatColor.RED + "[QueueCommands] : You do not have permission to do this!");
+					sender.sendMessage(ChatColor.RED + "You don't have permission to access this command.");
 					return false;
 				}
 				if (args.length < 3) {

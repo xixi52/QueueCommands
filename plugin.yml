@@ -1,0 +1,27 @@
+name: QueueCommands
+main: me.artbnz.querycommands.Queue
+version: 1.2.0
+description: Force a player to use a command!
+commands:
+  qc:
+    description: Allows you to force a player to use a command!
+permissions:
+  queuecommands.help:
+    description: Show help commands.
+    default: op
+  queuecommands.addp:
+    description: Lets you force the player to execute a command on the player as soon as possible.
+    usage: /qc add [player] [command] <args>
+    default: op
+  queuecommands.addc:
+    description: Lets you force console to execute a command on the player as soon as possible.
+    usage: /qc add [player] [command] <args>
+    default: op
+  queuecommands.clear:
+    description: Lets you clear the players queue
+    usage: /qc clear [player]
+    default: op
+  queuecommands.message:
+    description: Lets you send a message to the player as soon as possible.
+    usage: /qc message [player] [message]
+    default: op

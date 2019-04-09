@@ -1,5 +1,5 @@
 name: QueueCommands
-main: me.artbnz.querycommands.Queue
+main: me.artbnz.queuecommands.Queue
 version: 1.2.0
 description: Force a player to use a command!
 commands:

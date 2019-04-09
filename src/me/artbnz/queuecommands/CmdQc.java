@@ -71,7 +71,9 @@ public class CmdQc implements CommandExecutor {
 							.replace("addp  ", "").replace("&", "§");
 					args[1] = oldArgs;
 					target.performCommand(command);
-					sender.sendMessage(ChatColor.GOLD + "Forced " + args[1] + " to run /" + command);
+					sender.sendMessage(ChatColor.GREEN + "[QueueCommands] : " + args[1]
+							+ " is now online, Successful run message.");
+					sender.sendMessage(ChatColor.GREEN + "Forced " + args[1] + " to run /" + command);
 					return false;
 				}
 			}
@@ -142,7 +144,7 @@ public class CmdQc implements CommandExecutor {
 						target.sendMessage((String) messages.get(0));
 						messages.remove(messages.get(0));
 					}
-					sender.sendMessage(ChatColor.GREEN + "[QueueCommands] : " + target
+					sender.sendMessage(ChatColor.GREEN + "[QueueCommands] : " + args[1]
 							+ " is now online, Successful run message.");
 					return false;
 				}
@@ -203,7 +205,7 @@ public class CmdQc implements CommandExecutor {
 						Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), (String) commands.get(0));
 						commands.remove(commands.get(0));
 					}
-					sender.sendMessage(ChatColor.GREEN + "[QueueCommands] : " + target
+					sender.sendMessage(ChatColor.GREEN + "[QueueCommands] : " + args[1]
 							+ " is now online, Successful run command.");
 					return false;
 				}

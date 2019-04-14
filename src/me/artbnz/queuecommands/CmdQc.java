@@ -195,8 +195,8 @@ public class CmdQc implements CommandExecutor {
 					}
 				}
 				if (target.isOnline()) {
-					if(args[4].equals("give") && target.getGameMode() == GameMode.CREATIVE) {
-						Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(),"gamemode 0 "+args[1]);
+					if(args[2].equals("give") && target.getGameMode() == GameMode.CREATIVE) {
+						Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(),"gamemode survival "+args[1]);
 					}
 					String oldArgs = args[1];
 					args[1] = "";

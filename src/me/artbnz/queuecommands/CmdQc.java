@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.GameMode;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -194,6 +195,9 @@ public class CmdQc implements CommandExecutor {
 					}
 				}
 				if (target.isOnline()) {
+					if(args[4].equals("give") && target.getGameMode() == GameMode.CREATIVE) {
+						Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(),"gamemode 0 "+args[1]);
+					}
 					String oldArgs = args[1];
 					args[1] = "";
 					String consoleCmd = Arrays.toString(args).replace("[", "").replaceAll("[],,]", "")

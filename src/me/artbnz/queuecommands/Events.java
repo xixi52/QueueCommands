@@ -1,6 +1,8 @@
 package me.artbnz.queuecommands;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
+
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -15,7 +17,8 @@ public class Events implements Listener {
 	}
 
 	@EventHandler
-	public void onplayerjoinevent(PlayerJoinEvent event) {
+	public void onplayerjoinevent(PlayerJoinEvent event) throws InterruptedException {
+		TimeUnit.SECONDS.sleep(2);
 		Player player = event.getPlayer();
 		PlayerFile yaml = Queue.getOfflinePlayerYaml(player.getName());
 		if (yaml.contains("commands")) {
@@ -37,6 +40,7 @@ public class Events implements Listener {
 		if (yaml.contains("consoleCommands")) {
 			List<String> commands = yaml.getStringList("consoleCommands");
 			while ((commands.size() != 0) && (commands.get(0) != null)) {
+				TimeUnit.SECONDS.sleep(1);
 				Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), (String) commands.get(0));
 				commands.remove(commands.get(0));
 				yaml.set("consoleCommands", commands);
